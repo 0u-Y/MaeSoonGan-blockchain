@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  anchor-dev:
+    build: .
+    container_name: anchor_dev_container
+    volumes:
+      - .:/app
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    environment:
+      - PATH=/root/.cargo/bin:/root/.local/share/solana/install/active_release/bin:$PATH
+    command: bash
